@@ -1,0 +1,500 @@
+/*
+ * Shell styles for Phaser layout.
+ * html/body -> #root -> #app -> #game-container (Phaser parent).
+ */
+:root {
+    --tb-viewport-width: 100vw;
+    --tb-viewport-height: 100dvh;
+    --tb-viewport-left: 0px;
+    --tb-viewport-top: 0px;
+    --tb-shell-background-image: url("./fullscreen_bg.webp");
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color: #000000;
+    background-image: var(--tb-shell-background-image);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    overscroll-behavior: none;
+    touch-action: none;
+    -webkit-text-size-adjust: 100%;
+    background-color: #000000;
+    background-image: var(--tb-shell-background-image);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    isolation: isolate;
+}
+
+.tb-viewport-managed,
+.tb-viewport-managed body {
+    width: var(--tb-viewport-width);
+    height: var(--tb-viewport-height);
+    min-height: var(--tb-viewport-height);
+}
+
+.tb-native-fullscreen,
+.tb-soft-fullscreen {
+    background-color: #000000;
+    background-image: var(--tb-shell-background-image);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+
+.tb-soft-fullscreen body {
+    position: fixed;
+    inset: 0;
+    width: var(--tb-viewport-width);
+    height: var(--tb-viewport-height);
+    min-height: var(--tb-viewport-height);
+    overflow: hidden;
+}
+
+.tb-soft-fullscreen #root {
+    position: fixed;
+    inset: var(--tb-viewport-top) auto auto var(--tb-viewport-left);
+    width: var(--tb-viewport-width);
+    height: var(--tb-viewport-height);
+    min-height: var(--tb-viewport-height);
+}
+
+.tb-soft-fullscreen #app,
+.tb-soft-fullscreen #game-container {
+    width: var(--tb-viewport-width);
+    height: var(--tb-viewport-height);
+    min-height: var(--tb-viewport-height);
+    max-width: var(--tb-viewport-width);
+    max-height: var(--tb-viewport-height);
+}
+
+#root:fullscreen,
+#root:-webkit-full-screen {
+    width: 100vw;
+    height: 100dvh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    background-image: var(--tb-shell-background-image);
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#root {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: transparent;
+}
+
+.background-container {
+    display: none !important;
+    visibility: hidden !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+}
+
+.background-image,
+.background-container .background-image {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+#root canvas {
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.7));
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#app {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.app-ui-layer {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.app-ui-layer > * {
+    pointer-events: auto;
+}
+
+.mobile-orientation-gate {
+    position: fixed;
+    inset: var(--tb-viewport-top) auto auto var(--tb-viewport-left);
+    width: var(--tb-viewport-width);
+    height: var(--tb-viewport-height);
+    z-index: 2147483647;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:
+        max(24px, env(safe-area-inset-top))
+        max(24px, env(safe-area-inset-right))
+        max(24px, env(safe-area-inset-bottom))
+        max(24px, env(safe-area-inset-left));
+    box-sizing: border-box;
+    background:
+        radial-gradient(circle at 50% 36%, rgba(102, 212, 73, 0.18), rgba(2, 7, 12, 0) 36%),
+        rgba(2, 7, 12, 0.88);
+    color: #ffffff;
+    pointer-events: auto;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    isolation: isolate;
+}
+
+.mobile-orientation-gate[hidden],
+.mobile-orientation-gate--hidden {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.mobile-orientation-gate__panel {
+    width: min(320px, calc(var(--tb-viewport-width) - 48px));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 2vmin, 18px);
+    text-align: center;
+    transform: translateY(-2px);
+}
+
+.mobile-orientation-gate__icon {
+    position: relative;
+    width: clamp(100px, 16vmin, 134px);
+    height: clamp(100px, 16vmin, 134px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Phone tilt + ring fade + one full arrow revolution share this clock */
+    --gate-loop-duration: 2s;
+}
+
+/* Circular arrow: fades in/out on the master timeline; inner layer spins continuously while mounted. */
+.mobile-orientation-gate__circ-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(108%, 136px);
+    height: min(108%, 136px);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    animation: tb-gate-seq-circ-fade var(--gate-loop-duration) ease-in-out infinite;
+    filter: drop-shadow(0 0 12px rgba(102, 212, 73, 0.55)) drop-shadow(0 0 28px rgba(102, 212, 73, 0.25));
+}
+
+.mobile-orientation-gate__circ-spin {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+    will-change: transform;
+    /* Exactly one full 360° per loop, same duration as phone sequence */
+    animation: tb-gate-seq-circ-spin var(--gate-loop-duration) linear infinite;
+}
+
+.mobile-orientation-gate__circ-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Avoid filter on the stroked path — it often hides SVG markers (arrowhead) in WebKit. Glow lives on .circ-wrap. */
+.mobile-orientation-gate__circ-path {
+    filter: none;
+}
+
+/* Phone: portrait rect; rotate(90deg) reads as landscape; sequence rotates to portrait then resets. */
+.mobile-orientation-gate__phone {
+    position: relative;
+    z-index: 2;
+    width: clamp(32px, 5vmin, 44px);
+    height: clamp(52px, 8vmin, 70px);
+    border: clamp(3px, 0.45vmin, 4px) solid rgba(255, 255, 255, 0.96);
+    border-radius: clamp(10px, 1.5vmin, 14px);
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        0 16px 34px rgba(0, 0, 0, 0.36);
+    transform-origin: 50% 50%;
+    animation:
+        tb-gate-seq-phone var(--gate-loop-duration) linear infinite,
+        tb-gate-seq-phone-paint var(--gate-loop-duration) linear infinite;
+}
+
+.mobile-orientation-gate__phone::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 11%;
+    width: 34%;
+    height: 4%;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    transform: translateX(-50%);
+    animation: tb-gate-seq-phone-detail var(--gate-loop-duration) linear infinite;
+}
+
+.mobile-orientation-gate__phone::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 11%;
+    width: 16%;
+    height: 10%;
+    border-radius: 999px;
+    background: #ffffff;
+    transform: translateX(-50%);
+    animation: tb-gate-seq-phone-detail-solid var(--gate-loop-duration) linear infinite;
+}
+
+.mobile-orientation-gate__title {
+    margin: 0;
+    font-family: Poppins-Bold, Arial, Helvetica, sans-serif;
+    font-size: clamp(20px, 3.2vmin, 30px);
+    line-height: 1.15;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+.mobile-orientation-gate__text {
+    margin: 8px 0 0;
+    font-family: Poppins-Regular, Arial, Helvetica, sans-serif;
+    font-size: clamp(13px, 1.8vmin, 16px);
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 320px;
+}
+
+.tb-orientation-blocked #root {
+    pointer-events: none;
+}
+
+/*
+ * One loop length = --gate-loop-duration on .mobile-orientation-gate__icon:
+ * — Phone: landscape → portrait → hold → back to landscape (seamless loop).
+ * — Ring: fade in/out on same timeline; arrow does exactly one full turn per loop (same duration, CCW).
+ */
+@keyframes tb-gate-seq-phone {
+    0%,
+    6% {
+        transform: rotate(90deg);
+    }
+    28%,
+    62% {
+        transform: rotate(0deg);
+    }
+    82%,
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+/* Synced with tb-gate-seq-phone: green in portrait window, white in landscape */
+@keyframes tb-gate-seq-phone-paint {
+    0%,
+    21% {
+        border-color: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            0 16px 34px rgba(0, 0, 0, 0.36);
+    }
+    28%,
+    61% {
+        border-color: #66d449;
+        background: rgba(102, 212, 73, 0.12);
+        box-shadow:
+            0 0 0 1px rgba(102, 212, 73, 0.45),
+            0 16px 34px rgba(0, 0, 0, 0.36),
+            0 0 14px rgba(102, 212, 73, 0.35);
+    }
+    69%,
+    100% {
+        border-color: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            0 16px 34px rgba(0, 0, 0, 0.36);
+    }
+}
+
+@keyframes tb-gate-seq-phone-detail {
+    0%,
+    21% {
+        background: rgba(255, 255, 255, 0.82);
+    }
+    28%,
+    61% {
+        background: #66d449;
+    }
+    69%,
+    100% {
+        background: rgba(255, 255, 255, 0.82);
+    }
+}
+
+@keyframes tb-gate-seq-phone-detail-solid {
+    0%,
+    21% {
+        background: #ffffff;
+    }
+    28%,
+    61% {
+        background: #66d449;
+    }
+    69%,
+    100% {
+        background: #ffffff;
+    }
+}
+
+@keyframes tb-gate-seq-circ-fade {
+    0%,
+    5% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.92);
+    }
+    14%,
+    58% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    68%,
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.94);
+    }
+}
+
+/* One full counter-clockwise revolution per loop (= opposite of clockwise). */
+@keyframes tb-gate-seq-circ-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mobile-orientation-gate__phone {
+        animation: none;
+        transform: rotate(0deg);
+        border-color: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            0 16px 34px rgba(0, 0, 0, 0.36);
+    }
+
+    .mobile-orientation-gate__phone::before,
+    .mobile-orientation-gate__phone::after {
+        animation: none;
+    }
+
+    .mobile-orientation-gate__phone::before {
+        background: rgba(255, 255, 255, 0.82);
+    }
+
+    .mobile-orientation-gate__phone::after {
+        background: #ffffff;
+    }
+
+    .mobile-orientation-gate__circ-wrap {
+        animation: none;
+        opacity: 0.75;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .mobile-orientation-gate__circ-spin {
+        animation: none;
+    }
+}
+
+.spritePosition {
+    margin: 10px 0 0 10px;
+    font-size: 0.8em;
+}
+
+.button {
+    width: 140px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #000000;
+    color: rgba(255, 255, 255, 0.87);
+    border: 1px solid rgba(255, 255, 255, 0.87);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    border: 1px solid #0ec3c9;
+    color: #0ec3c9;
+}
+
+.button:active {
+    background-color: #0ec3c9;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}

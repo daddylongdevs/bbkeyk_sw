@@ -1,0 +1,306 @@
+.desktop {
+	.main {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.horizontalButtons {
+		position: absolute;
+		top: 85%;
+		left: 50%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		transform: translate(-50%);
+	}
+	
+	.verticalButtons {
+		position: absolute;
+		top: 25%;
+		left: 83%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+		transform: translate(-50%);
+	}
+	
+	
+	.button {
+		border: none;
+		padding: 0;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+		background-color: transparent;
+		border-radius: 50%;
+		
+		outline: none;
+		box-shadow: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none; 
+		-webkit-tap-highlight-color: transparent;
+		user-select: none;
+	
+		&:active {  // Target the active state
+			background-color: transparent;  // Match the button's normal state
+			transform: scale(0.90);  // Optional: Slight scale for click feedback without a rectangular flash
+			box-shadow: none;  // Reinforce no shadow
+		}
+	}
+	
+	.balance {
+		width: 220px;
+		height: 50px;
+		display: flex;
+		padding: 16px 22px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex: 1 0 0;
+		align-self: stretch;
+	
+		border-radius: 18px;
+		border: 1px solid #00FFFC;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+		backdrop-filter: blur(4.5px);
+	
+	
+		p {
+			margin: 0px;
+		}
+	}
+	
+	.totalWin {
+		width: 220px;
+		height: 50px;
+		display: flex;
+		padding: 16px 22px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex: 1 0 0;
+		align-self: stretch;
+	
+		border-radius: 18px;
+		border: 1px solid #00FFFC;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+		backdrop-filter: blur(4.5px);
+	
+	
+		p {
+			margin: 0px;
+		}
+	}
+	
+	.bet {
+		width: 100px;
+		height: 50px;
+		display: flex;
+		padding: 16px 22px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex: 1 0 0;
+		align-self: stretch;
+	
+		border-radius: 18px;
+		border: 1px solid #00FFFC;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+		backdrop-filter: blur(4.5px);
+	
+	
+		p {
+			margin: 0px;
+		}
+	}
+
+	.spin {
+		width: 150px;
+		height: 150px;
+		background-image: url('assets/desktop/buttons/Spin.png');
+	}
+	
+	.turbo {
+		width: 70px;
+		height: 70px;
+		background-image: url('assets/desktop/buttons/Turbo.png');
+	}
+	
+	.autoplay {
+		width: 70px;
+		height: 70px;
+		background-image: url('assets/desktop/buttons/Autoplay.png');
+	}
+	
+	.info {
+		width: 50px;
+		height: 50px;
+		background-image: url('assets/desktop/buttons/Info.png');
+		margin-top: 20px;
+	}
+}
+
+
+.mobile {
+	.main {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+	}
+	
+	.horizontalButtons {
+		position: absolute;
+		top: 85%;
+		left: 50%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 10px;
+		transform: translate(-50%);
+	}
+	
+	.verticalButtons {
+		position: absolute;
+		top: 25%;
+		left: 83%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+		transform: translate(-50%);
+	}
+	
+	
+	.button {
+		border: none;
+		padding: 0;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+		background-color: transparent;
+		border-radius: 50%;
+		
+		outline: none;
+		box-shadow: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none; 
+		-webkit-tap-highlight-color: transparent;
+		user-select: none;
+	
+		&:active {  // Target the active state
+			background-color: transparent;  // Match the button's normal state
+			transform: scale(0.90);  // Optional: Slight scale for click feedback without a rectangular flash
+			box-shadow: none;  // Reinforce no shadow
+		}
+	}
+	
+	.balance {
+		width: 220px;
+		height: 50px;
+		display: flex;
+		padding: 16px 22px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex: 1 0 0;
+		align-self: stretch;
+	
+		border-radius: 18px;
+		border: 1px solid #00FFFC;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+		backdrop-filter: blur(4.5px);
+	
+	
+		p {
+			margin: 0px;
+		}
+	}
+	
+	.totalWin {
+		width: 220px;
+		height: 50px;
+		display: flex;
+		padding: 16px 22px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex: 1 0 0;
+		align-self: stretch;
+	
+		border-radius: 18px;
+		border: 1px solid #00FFFC;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+		backdrop-filter: blur(4.5px);
+	
+	
+		p {
+			margin: 0px;
+		}
+	}
+	
+	.bet {
+		width: 100px;
+		height: 50px;
+		display: flex;
+		padding: 16px 22px;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		flex: 1 0 0;
+		align-self: stretch;
+	
+		border-radius: 18px;
+		border: 1px solid #00FFFC;
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%);
+		backdrop-filter: blur(4.5px);
+	
+	
+		p {
+			margin: 0px;
+		}
+	}
+
+	.spin {
+		width: 150px;
+		height: 150px;
+		background-image: url('assets/desktop/buttons/Spin.png');
+	}
+	
+	.turbo {
+		width: 70px;
+		height: 70px;
+		background-image: url('assets/desktop/buttons/Turbo.png');
+	}
+	
+	.autoplay {
+		width: 70px;
+		height: 70px;
+		background-image: url('assets/desktop/buttons/Autoplay.png');
+	}
+	
+	.info {
+		width: 50px;
+		height: 50px;
+		background-image: url('assets/desktop/buttons/Info.png');
+		margin-top: 20px;
+	}
+}
+
+

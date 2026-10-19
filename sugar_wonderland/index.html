@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="icon" type="image/png" href="./favicon.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<link rel="preload" as="font" href="./assets/fonts/poppins/Poppins-Regular.ttf" type="font/ttf" crossorigin="anonymous" />
+	<link rel="preload" as="font" href="./assets/fonts/poppins/Poppins-Bold.ttf" type="font/ttf" crossorigin="anonymous" />
+	<link rel="stylesheet" href="./style.css">
+	<title>Sugar Wonderland</title>
+	<link rel="stylesheet" href="./main.scss">
+	<!-- Runtime config (ConfigMap / nginx). Missing file is OK — fallbacks fill in below via Vite inject. -->
+	<script src="/app-config.js"></script>
+	<style>
+		:root {
+			--tb-shell-background-image: url("./fullscreen_bg.webp");
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			min-height: 100%;
+			overflow: hidden;
+			background: #000000;
+			background-image: var(--tb-shell-background-image);
+			background-size: cover;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+		}
+
+		.background-container,
+		.background-image {
+			display: none !important;
+			pointer-events: none !important;
+			visibility: hidden !important;
+		}
+
+		#root {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			min-height: 100%;
+			background: transparent;
+		}
+
+		#root:fullscreen,
+		#root:-webkit-full-screen {
+			background-color: #000000;
+			background-image: var(--tb-shell-background-image);
+			background-size: cover;
+			background-position: center bottom;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="root"></div>
+	<script type="module" src="./src/main.tsx"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+{
+    "skeleton": {
+        "hash": "mOyh0VCN5Vk",
+        "spine": "4.3.26",
+        "x": -484.838,
+        "y": -484.838,
+        "width": 969.676,
+        "height": 969.676,
+        "images": "./spin button new/spin button new/",
+        "audio": "./audio"
+    },
+    "bones": [
+        {
+            "name": "root"
+        },
+        {
+            "name": "Saber_00000",
+            "parent": "root",
+            "color": "00ffd9ff"
+        },
+        {
+            "name": "Particle_00000",
+            "parent": "root",
+            "scaleX": 1.0313077,
+            "scaleY": 1.0313077,
+            "color": "03fff8ff"
+        }
+    ],
+    "slots": [
+        {
+            "name": "Particle_00000",
+            "bone": "Particle_00000",
+            "attachment": "Particle_"
+        },
+        {
+            "name": "Button",
+            "bone": "root",
+            "attachment": "Button"
+        },
+        {
+            "name": "Saber_00000",
+            "bone": "Saber_00000",
+            "attachment": "Saber_00000",
+            "blend": "additive"
+        }
+    ],
+    "skins": [
+        {
+            "name": "default",
+            "attachments": {
+                "Button": {
+                    "Button": {
+                        "width": 446,
+                        "height": 446
+                    }
+                },
+                "Particle_00000": {
+                    "Particle_": {
+                        "scaleX": 0.5876495,
+                        "scaleY": 0.5876495,
+                        "width": 1600,
+                        "height": 1600,
+                        "sequence": {
+                            "count": 12,
+                            "start": 0,
+                            "digits": 5
+                        }
+                    }
+                },
+                "Saber_00000": {
+                    "Saber_00000": {
+                        "scaleX": 0.5983003,
+                        "scaleY": 0.5983003,
+                        "width": 1600,
+                        "height": 1600
+                    }
+                }
+            }
+        }
+    ],
+    "animations": {
+        "animation": {
+            "slots": {
+                "Particle_00000": {
+                    "rgba": [
+                        {
+                            "color": "ffffff00"
+                        },
+                        {
+                            "time": 0.13333334,
+                            "color": "ffffffff",
+                            "curve": "stepped"
+                        },
+                        {
+                            "time": 0.6666667,
+                            "color": "ffffffff"
+                        },
+                        {
+                            "time": 0.7666666,
+                            "color": "ffffff00"
+                        }
+                    ]
+                },
+                "Saber_00000": {
+                    "rgba": [
+                        {
+                            "color": "ffffff00"
+                        },
+                        {
+                            "time": 0.13333334,
+                            "color": "ffffffff",
+                            "curve": "stepped"
+                        },
+                        {
+                            "time": 0.6666667,
+                            "color": "ffffffff"
+                        },
+                        {
+                            "time": 0.7666666,
+                            "color": "ffffff00"
+                        }
+                    ]
+                }
+            },
+            "bones": {
+                "Saber_00000": {
+                    "rotate": [
+                        {},
+                        {
+                            "time": 0.7666666,
+                            "value": 360
+                        }
+                    ]
+                }
+            },
+            "attachments": {
+                "default": {
+                    "Particle_00000": {
+                        "Particle_": {
+                            "sequence": [
+                                {
+                                    "mode": "loop",
+                                    "delay": 0.04166667
+                                },
+                                {
+                                    "time": 0.7666666,
+                                    "mode": "loop",
+                                    "index": 11
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

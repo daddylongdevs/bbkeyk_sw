@@ -1,0 +1,14 @@
+FreeSpinDialog_KA.png
+size:716,716
+filter:Linear,Linear
+pma:true
+FreeSpinDialog_KA_01
+bounds:2,2,405,155
+offsets:1,1,407,157
+FreeSpinDialog_KA_02
+bounds:2,159,407,159
+offsets:1,1,410,161
+FreeSpinDialog_KA_03
+bounds:2,485,512,228
+FreeSpinDialog_KA_04
+bounds:2,320,512,163

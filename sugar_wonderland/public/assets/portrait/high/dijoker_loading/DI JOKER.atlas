@@ -1,0 +1,29 @@
+DI JOKER.png
+size:336,336
+filter:Linear,Linear
+pma:true
+scale:0.2
+Eye open
+bounds:202,153,132,71
+L ear
+bounds:2,4,47,93
+R ear
+bounds:264,18,44,61
+chin
+bounds:264,81,53,24
+offsets:5,0,58,24
+goggles
+bounds:2,229,164,105
+inside mouth
+bounds:264,107,69,44
+jaw
+bounds:168,226,160,108
+offsets:1,0,162,108
+lips
+bounds:51,18,117,79
+sungay 1
+bounds:202,23,60,128
+sungay 2
+bounds:2,99,134,128
+sungay 3
+bounds:138,116,62,108

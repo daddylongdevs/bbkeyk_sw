@@ -1,0 +1,69 @@
+generic_UI_animation.png
+size:1748,1748
+filter:Linear,Linear
+pma:true
+Generic _UI_00000
+bounds:2,7,1,1
+Generic _UI_00001
+bounds:2,7,1,1
+Generic _UI_00002
+bounds:2,7,1,1
+Generic _UI_00003
+bounds:2,7,1,1
+Generic _UI_00021
+bounds:2,7,1,1
+Generic _UI_00022
+bounds:2,7,1,1
+Generic _UI_00023
+bounds:2,7,1,1
+Generic _UI_00004
+bounds:1490,282,255,256
+offsets:123,122,500,500
+Generic _UI_00005
+bounds:1467,1477,267,268
+offsets:117,116,500,500
+Generic _UI_00006
+bounds:1456,1033,280,280
+offsets:110,110,500,500
+Generic _UI_00007
+bounds:1183,224,305,296
+offsets:99,102,500,500
+Generic _UI_00008
+bounds:848,210,333,310
+offsets:85,95,500,500
+Generic _UI_00009
+bounds:488,190,358,330
+offsets:73,83,500,500
+Generic _UI_00010
+bounds:1319,540,381,349
+offsets:61,71,500,500
+Generic _UI_00011
+bounds:916,522,401,367
+offsets:51,60,500,500
+Generic _UI_00012
+bounds:495,522,419,383
+offsets:42,50,500,500
+Generic _UI_00013
+bounds:499,907,436,399
+offsets:34,40,500,500
+Generic _UI_00014
+bounds:2,10,450,411
+offsets:27,32,500,500
+Generic _UI_00015
+bounds:991,891,463,422
+offsets:20,24,500,500
+Generic _UI_00016
+bounds:991,1315,474,430
+offsets:15,17,500,500
+Generic _UI_00017
+bounds:2,423,484,435
+offsets:10,11,500,500
+Generic _UI_00018
+bounds:2,860,491,440
+offsets:6,6,500,500
+Generic _UI_00019
+bounds:2,1302,495,443
+offsets:4,2,500,500
+Generic _UI_00020
+bounds:499,1308,490,437
+offsets:7,3,500,500
