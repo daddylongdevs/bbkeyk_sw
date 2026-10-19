@@ -1,0 +1,8 @@
+/sugar_wonderland/dist
+/felice_in_space/src/reference
+.cursor
+.vscode
+CLAUDE.md
+/.vs
+*/node_modules/
+*/dist/
